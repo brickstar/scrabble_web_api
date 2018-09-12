@@ -9,7 +9,8 @@ describe 'guest user visits /' do
 
       click_on "Validate Word"
 
-      expect(page).to have_content("'foxes' is a valid word and its root form is 'fox.'")
+      save_and_open_page
+      expect(page).to have_content("'foxes' is a valid word and its root form is fox'")
     end
   end
 
@@ -20,7 +21,6 @@ describe 'guest user visits /' do
       fill_in :search, with: "foxez"
 
       click_on "Validate Word"
-
       expect(page).to have_content("'foxez' is not a valid word.")
     end
   end

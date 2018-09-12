@@ -2,19 +2,18 @@ class Presenter
   attr_reader :word
   def initialize(params)
     @word = params[:search]
-    binding.pry
   end
 
-  def root_word
+  def word_response
     if response.body.include?("404")
-
-    get_json[:results][0][:lexicalEntries][0][:inflectionOf][0][:id]
-  end
-
-  def check_validation
-    if response.body.include?("404")
-      "#{word} is not a valid word."
+      "'#{word}' is not a valid word."
+    else
+      "'#{word}' is a valid word and its root form is #{get_root_word}'"
     end
+  end
+
+  def get_root_word
+    get_json[:results][0][:lexicalEntries][0][:inflectionOf][0][:id]
   end
 
   def get_json
