@@ -4,7 +4,4 @@ class Api::V1::GamesController < ApiBaseController
     render json: game
   end
 
-  def create
-    binding.pry
-  end
 end
