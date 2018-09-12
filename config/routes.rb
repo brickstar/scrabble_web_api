@@ -4,7 +4,8 @@ Rails.application.routes.draw do
 
   namespace :api do
     namespace :v1 do
-      get "/games", to "games#show"
+      get "/game", to: "game#show"
+      resources :games, only: [:show]
     end
   end
 end
