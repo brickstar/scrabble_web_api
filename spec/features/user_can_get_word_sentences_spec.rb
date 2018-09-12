@@ -11,7 +11,7 @@ describe 'guest user visits /' do
       click_on "Validate Word"
       # And I click “Validate Word”
       save_and_open_page
-      expect(page).to have_content("‘foxes’ is a valid word and its root form is ‘fox’.")
+      expect(page).to have_content("'foxes' is a valid word and its root form is 'fox.'")
       # Then I should see a message that says “‘foxes’ is a valid word and its root form is ‘fox’.”
     end
   end
