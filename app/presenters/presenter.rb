@@ -9,7 +9,7 @@ class Presenter
     if @service.response.body.include?("404")
       "'#{word}' is not a valid word."
     else
-      "'#{word}' is a valid word and its root form is #{get_root_word}'"
+      "'#{word}' is a valid word and its root form is '#{get_root_word}'"
     end
   end
 
