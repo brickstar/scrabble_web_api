@@ -1,7 +1,10 @@
 class Presenter
-  attr_reader :word
   def initialize(params)
-    @word = params[:search]
+    @param_word = params[:search]
+  end
+
+  def word
+    binding.pry
   end
 
   def root_word
